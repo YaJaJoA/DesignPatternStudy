@@ -65,6 +65,7 @@ class IphoneMemoryCard : MemoryCard
 ```
 부품 클래스들을 각각 생성한다면 새로운 회사의 스마트폰이 생길 때마다 이를 생성하는 코드를 작성해주어야 한다.
 
+## 구현
 서로 관련된 class들을 한번에 생성하는 abstract factory interface를 정의하면 보다 간편하게 구성할 수 있다.
 ```
 interface IAbstractFactory
@@ -81,4 +82,15 @@ public:
     virtual Chipset* MakeChipSet() const{ return new GalaxyChipset; }
     virtual Camera* MakeCamera() const{ return new GalaxyCamera; }
     virtual MemoryCard* MakeMemoryCard() const{ return new GalaxyMemoryCard; }
+}
+
+public SmartPhone* MakeSmartPhone(IAbstractFactory& factory){
+    Chipset* chipset = factory.MakeChipSet();
+    Camera* camera = factory.MakeCamera();
+    MemoryCard* memoryCard = factory.MakeMemoryCard();
+    
+    SmartPhone* smartPhone = new SmartPhone(chipset, camera, memoryCard);
+    return smartPhone;
+}
 ```
+MakeSmartPhone 함수에 Factory를 인자로 줌으로써 적합한 부품만 사용해 스마트폰 클래스를 구성할 수 있다.
