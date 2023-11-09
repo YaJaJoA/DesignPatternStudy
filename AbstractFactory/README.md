@@ -52,16 +52,18 @@ class IphoneMemoryCard : MemoryCard
 }
 ```
 ```
-    static void Main()
-    {
-        GalaxyChipset galaxyChipset = new GalaxyChipset();
-        GalaxyCamera galaxyCamera = new GalaxyCamera();
-        GalaxyMemoryCard galaxyMemoryCard = new GalaxyMemoryCard();
-
-        IphoneCamera iphoneCamera = new IphoneCamera();
-        IphoneChipset iphoneChipset = new IphoneChipset();
-        IphoneMemoryCard iphoneMemoryCard = new IphoneMemoryCard();
-    }
+static void Main()
+{
+    Smartphone* GalaxyPhone = new SmartPhone();
+    GalaxyPhone.Chipset = new GalaxyChipset();    
+    GalaxyPhone.Camera = new GalaxyCamera();
+    GalaxyPhone.MemoryCard = new GalaxyMemoryCard();
+    
+    Smartphone* IPhone = new SmartPhone();
+    IPhone.Camera = new IphoneCamera();
+    IPhone.Chipset = new IphoneChipset();
+    IPhone.MemoryCard = new IphoneMemoryCard();
+}
 ```
 부품 클래스들을 각각 생성한다면 새로운 회사의 스마트폰이 생길 때마다 이를 생성하는 코드를 작성해주어야 한다.
 
@@ -84,7 +86,8 @@ public:
     virtual MemoryCard* MakeMemoryCard() const{ return new GalaxyMemoryCard; }
 }
 
-public SmartPhone* MakeSmartPhone(IAbstractFactory& factory){
+public SmartPhone* MakeSmartPhone(IAbstractFactory& factory)
+{
     Chipset* chipset = factory.MakeChipSet();
     Camera* camera = factory.MakeCamera();
     MemoryCard* memoryCard = factory.MakeMemoryCard();
@@ -93,4 +96,28 @@ public SmartPhone* MakeSmartPhone(IAbstractFactory& factory){
     return smartPhone;
 }
 ```
+
 MakeSmartPhone 함수에 Factory를 인자로 줌으로써 적합한 부품만 사용해 스마트폰 클래스를 구성할 수 있다.
+
+```
+static void Main()
+{
+    GalaxyFactory galaxyFactory = new GalaxyFatory();
+    Smartphone* GalaxyPhone = MakeSmartPhone(galaxyFactory);
+
+    IphoneFactory iphoneFactory = new IphoneFatory();
+    Smartphone* IPhone = MakeSmartPhone(iphoneFactory);
+}
+```
+
+## 장단점
+1.
+
+1.
+
+1.
+
+1.
+
+
+## 연관된 패턴
