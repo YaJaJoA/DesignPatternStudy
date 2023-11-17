@@ -29,3 +29,10 @@
 4. (일주일에 한번) 깃 올린 거 보면서 코드 리뷰하기
 5. 10주간 반복
 
+### note
+1. \# 은 macro 를 검색하거나 include guard
+CMake 를 검색하면 Compile 관련된게 나온다
+\#define --> constexpr 로 대체하고 있으니 
+2. preprocessor(전처리기) vs constexpr 
+3. templete 을 쓸때는 h랑 cpp 나누면 안된다
+-> hpp 파일 하나에 몰아서 적으면 된다
