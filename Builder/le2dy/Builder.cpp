@@ -19,7 +19,7 @@ class BoxBuilder {
  public:
   virtual BoxBuilder setMaterial(MATERIAL mat) { box.setMaterial(mat); };
   virtual BoxBuilder fillInside(int num) { box.fillInside(num); };
-  virtual BoxBuilder setPacking(int type){box.setPacking(type)};
+  virtual BoxBuilder setPacking(int type) { box.setPacking(type); };
 
   virtual Box post() { return box; };
 };
