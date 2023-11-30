@@ -21,8 +21,11 @@ add_executable(DesignPatternStudySamples main.cpp ${SOURCE})#Mazes/Maze.cpp Maze
 file(GLOB SOURCES
         Mazes/*.h
         Mazes/*.cpp
+        Mazes/Prototype/*.h
+        Mazes/Prototype/*.cpp
         CustomException.hpp
         MazeGame.hpp
+        MazeView.hpp
 )
 
 add_executable(DesignPatternStudySamples main.cpp ${SOURCES})#Mazes/Maze.cpp Mazes/Maze.h Mazes/MazeFactory.h MazeGame.hpp CustomException.hpp)

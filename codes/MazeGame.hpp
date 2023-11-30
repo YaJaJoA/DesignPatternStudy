@@ -3,14 +3,16 @@
 
 #include "Mazes/Maze.h"
 #include "Mazes/MazeFactory.h"
-
+#include "Character/PlayerCharacter.h"
 using namespace BaseMazeComponents;
 using namespace BaseMazeFactories;
 
 namespace MazeGames{
-    class MazeGame {
+    class MazeGame{
         public:
             Maze* CreateMaze(BaseMazeFactories::BaseMazeFactory& mf); //추상팩토리 예제코드에 맞춰 매개변수 설정
+        private:
+            Player::PlayerCharacter* player;
     };    
 
     // MazeFactory를 매개변수로 받도록 하여, 클래스 이름을 하드코딩하여 생긴 문제를 해결한 함수
@@ -34,7 +36,7 @@ namespace MazeGames{
         r2->SetSide(West, aDoor);
 
         return aMaze;
-}
+    }
 }
 
 
