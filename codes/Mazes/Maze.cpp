@@ -9,6 +9,13 @@ Maze::Maze(){
     numberOfRooms = 0;
 }
 
+Maze::~Maze(){
+    for (int i = 0; i < numberOfRooms; i++){
+        if (rooms[i] != nullptr)
+            delete rooms[i];
+    }
+}
+
 bool Maze::AddRoom(Room* room){
     if (!(numberOfRooms < MAX_ROOMS))
         return false;
@@ -64,6 +71,23 @@ Door* Door::Clone() const{ // Clone for Prototype Pattern
 }
 // End Prototype Pattern
 
+int Door::Enter(){
+    return -1; //  if no parameter is given, return -1
+}
+
+int Door::Enter(Player::PlayerCharacter* player){
+    int from_room_number = player->GetCurrentRoomNumber();
+
+    if (from_room_number == _room1->GetRoomNumber()){
+        return Door::otherSideFrom(_room1)->GetRoomNumber();
+    }
+    else if (from_room_number == _room2->GetRoomNumber()){
+        return Door::otherSideFrom(_room2)->GetRoomNumber();
+    }
+    else
+        return Door::Enter(); // return Default Value
+}
+
 Room* Door::otherSideFrom(Room* room){
     if(room == _room1)
         return _room2;
@@ -79,6 +103,12 @@ Room::Room(int RoomNo){
     _roomNumber = RoomNo;
 }
 
+Room::~Room(){
+    for(int i = 0; i < 4; i++){
+        //delete _sides[i]; Door Deleted Twice...
+    }
+}
+
 MapSite* Room::GetSide(Direction direction) const{
     return _sides[direction];
 }
@@ -89,6 +119,14 @@ void Room::SetSide(Direction direction, MapSite* mapSite){
 
 int Room::GetRoomNumber() const{
     return _roomNumber;
+}
+
+int Room::Enter(){
+    return this->GetRoomNumber();
+}
+
+int Room::Enter(Player::PlayerCharacter* object){
+    return Room::Enter();
 }
 
 // Implementation for Prototype Pattern

@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include "Mazes/Maze.h"
-
 class RoomView{
 public:
     RoomView();
@@ -24,6 +23,7 @@ public:
     ~MazeView();
     void SetMaze(BaseMazeComponents::Maze* maze);
     void Draw();
+    void Draw(int RoomNo);
 
 private:
     BaseMazeComponents::Maze* current_maze;
@@ -79,7 +79,6 @@ MazeView::MazeView(){
 MazeView::MazeView(int width, int height){
 }
 MazeView::~MazeView(){
-    delete current_maze;
 }
 
 void MazeView::SetMaze(BaseMazeComponents::Maze* maze){
@@ -93,26 +92,35 @@ void MazeView::Draw(){
     // draw current_maze
     const int MAX_ROOM_NUMBER = BaseMazeComponents::Maze::MAX_ROOMS;
     for(int i = 0; i < MAX_ROOM_NUMBER; i++){
-        BaseMazeComponents::Room* room = current_maze->RoomNo(i);
-        // draw room
-        if (room == nullptr)
-            continue;
-        RoomView room_view;
-
-        // draw room's sides
-        for(int j = 0; j < 4; j++){
-            BaseMazeComponents::MapSite* side = room->GetSide((BaseMazeComponents::Direction)j);
-            // draw side
-            if (side == nullptr)
-                side = new BaseMazeComponents::Wall();
-            side->GetPrintableChar();
-            room_view.SetSide((BaseMazeComponents::Direction)j, side->GetPrintableChar());   
-        }
-        std::wcout << "Room #" << i << "\n";
-        room_view.Draw();
+        MazeView::Draw(i);
     }
 }
 
+void MazeView::Draw(int RoomNo){
+    if (current_maze == nullptr)
+        return;
+
+    // draw getRoomNo
+    BaseMazeComponents::Room* room = current_maze->RoomNo(RoomNo);
+
+    if (room == nullptr) return;
+
+    RoomView room_view;
+    // draw room's sides
+    for(int j = 0; j < 4; j++){
+        BaseMazeComponents::MapSite* side = room->GetSide((BaseMazeComponents::Direction)j);
+        // draw side
+        if (side == nullptr)
+            side = new BaseMazeComponents::Wall();
+        side->GetPrintableChar();
+        room_view.SetSide((BaseMazeComponents::Direction)j, side->GetPrintableChar());   
+    }
+    std::wcout << "\033[A\033[A\033[A\033[A"; // move cursor up
+    std::wcout << "Room #" << RoomNo << "\n";
+    room_view.Draw();
+    
+    return;
+}
 
 #pragma endregion MazeView Methods
 

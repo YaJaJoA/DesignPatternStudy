@@ -15,9 +15,11 @@ namespace Player{
             virtual void MoveUp() {};
             virtual void MoveDown() {};
             // end IMovable interface
+
+            int GetCurrentRoomNumber() const { return currentRoomNo; };
+            void SetCurrentRoomNumber(int roomNo) { currentRoomNo = roomNo; };
         private:
-            int x;
-            int y;
+            int currentRoomNo;
     };
 }
 
