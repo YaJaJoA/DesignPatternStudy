@@ -1,4 +1,4 @@
-# Adapter
+# Composite
 - Based on "Design Patterns: Elements of Reusable Object-Oriented Software" by Erich Gamma
 
 ## 요약
