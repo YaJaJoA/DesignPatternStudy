@@ -14,15 +14,15 @@ class Car(Vehicle):
         print("빵")
 
     def sound(self):
-        bonk()
+        self.bonk()
 
 
 class Truck(Vehicle):
     def __init__(self) -> None:
         super().__init__()
 
-    def sound():
-        noise()
+    def sound(self):
+        self.noise()
 
     def noise(self):
         print("빵아아앙")
@@ -32,8 +32,8 @@ class Train(Vehicle):
     def __init__(self) -> None:
         super().__init__()
 
-    def sound():
-        Ahhhh()
+    def sound(self):
+        self.Ahhhh()
 
     def Ahhhh(self):
         print("AHHHHHHHHHHHHHHHHHHHHH")

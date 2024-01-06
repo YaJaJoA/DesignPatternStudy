@@ -21,3 +21,31 @@
 * Client: Target 인터페이스를 따르는 객체와 협력.
 * Adaptee: 조정이 필요한 기존 인터페이스 정의.
 * Adapter: Adaptee의 인터페이스를 Target 인터페이스에 적용.
+<br>
+<br>
+
+## 장단점
+클래스와 객체 어댑터의 장단점이 다름.
+<br>
+
+클래스 adapter
+* 구체적인 Adapter 클래스에 커밋하여 Adaptee를 Target에 맞게 조정함.
+* Adaptee의 동작을 Adapter가 오버라이딩하게 함.
+* 단 하나의 객체만 사용하며 adaptee에게 도달하기 위해 추가적인 포인터 간접 참조가 필요하지 않음.
+<br>
+
+객체 어댑터
+* 하나의 Adapter가 많은 Adaptee와 함께 동작하게함.
+* Adapter의 동작을 오버라이드하기 힘들어짐.
+
+Adapter 패턴을 사용하기 위해서 고려해야 할 사항들
+* Adapter가 얼마나 많이 어댑팅해야 하는가?
+* 플러그형 Adapter
+* 투명성을 제공하기 위한 양방향 어댑터 사용
+<br>
+<br>
+
+## 관련 패턴
+* Bridge
+* Decorator
+* Proxy
