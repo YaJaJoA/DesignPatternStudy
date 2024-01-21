@@ -72,6 +72,6 @@ void main(){
 
 
 ## 연관된 패턴
--[Adapter](https://github.com/YaJaJoA/DesignPatternStudy/blob/main/Adapter/leejunseo/README.md)
--[Composite](https://github.com/YaJaJoA/DesignPatternStudy/blob/main/Composite/leejunseo/README.md)
--[Strategy](https://github.com/YaJaJoA/DesignPatternStudy/blob/main/Strategy/leejunseo/README.md)
+- [Adapter](https://github.com/YaJaJoA/DesignPatternStudy/blob/main/Adapter/leejunseo/README.md)
+- [Composite](https://github.com/YaJaJoA/DesignPatternStudy/blob/main/Composite/leejunseo/README.md)
+- [Strategy](https://github.com/YaJaJoA/DesignPatternStudy/blob/main/Strategy/leejunseo/README.md)
