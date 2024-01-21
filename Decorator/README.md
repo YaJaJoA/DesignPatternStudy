@@ -45,7 +45,7 @@ class DecoratorA : Component {
         cout << "DecoratorA.B" << endl;
         c.B();
     }
-    virtual void B(){
+    virtual void C(){
         cout << "new responsiblity" << endl;
     }
 }
