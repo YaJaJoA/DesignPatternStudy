@@ -26,12 +26,12 @@ Adapter는 class adapter과 object adapter 방식으로 구현할 수 있다.
 3. **투명성을 제공하기 위해 양방향 Adpater를 사용해야하는가?** 하나의 클래스를 서로 다른 어플리케이션에서 사용해야할 때 별도의 클래스로 변환하는 대신 양쪽에서 요구하는 Interface를 모두 상속해 사용할 수 있다.
 
 ## 구현
-1. 추상 함수를 사용함 (Interface)
--
-1. Delegate를 사용 
--
-1. Parameterized Adapte
--
+1. C++에서의 Class Adapter 구현 : Target 클래스를 Public으로 상속하고 Adaptee 클래스를 Private으로 상속 받는다. 따라서 타겟
+
+1. 
+- a. 추상 함수를 사용함 (Interface)
+- b. Delegate를 사용 
+- c. Parameterized Adapte
 
 ## 결과
 1.
