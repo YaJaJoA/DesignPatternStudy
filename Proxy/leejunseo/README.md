@@ -21,5 +21,5 @@ Proxy는 Subject(전달해줄 대상)의 정보를 알지 않아도 된다. 인�
 
 
 ## 연관된 패턴
--[Adapter](https://github.com/YaJaJoA/DesignPatternStudy/blob/main/Adapter/leejunseo/README.md)
--[Decorator](https://github.com/YaJaJoA/DesignPatternStudy/blob/main/Decorator/leejunseo/README.md)
+- [Adapter](https://github.com/YaJaJoA/DesignPatternStudy/blob/main/Adapter/leejunseo/README.md)
+- [Decorator](https://github.com/YaJaJoA/DesignPatternStudy/blob/main/Decorator/leejunseo/README.md)
