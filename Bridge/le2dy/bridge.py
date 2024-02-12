@@ -45,6 +45,9 @@ class Room():
 
     def setSize(self, w: int, h: int):
         self._imp.impSetSize(w, h)
+
+    def setFloorColor(self, color: str):
+        self._imp.impSetFloorColor(color)
         
     def draw(self):
         self._imp.draw()
@@ -53,7 +56,7 @@ class Room():
 class RoomColored(Room):
     def __init__(self, imp: RoomImp) -> None:
         super().__init__(imp)
-        # self._imp._fColor = "Red"
+        self.fColor = "Red"
 
     def setOrigin(self, origin: tuple):
         return super().setOrigin(origin)
@@ -61,11 +64,9 @@ class RoomColored(Room):
 
     def setSize(self, w: int, h: int):
         return super().setSize(w, h)
-    
-    def setFloorColor(self, color: str):
-        self._imp.impSetFloorColor(color)
 
     def draw(self):
+        super().setFloorColor(self.fColor)
         return super().draw()
 
 # Client
