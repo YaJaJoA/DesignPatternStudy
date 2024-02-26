@@ -27,7 +27,7 @@
 
 ## 결과
 1. **Hollywood Principle** : Template Method는 AbstractClass 에서 ConcreteClass들을 호출할 수 있게 만든다. 의존성을 역전하기 때문에 Client는 AbstractClass에 대한 정보만을 사용해 알고리즘을 사용할 수 있다. 즉, Concrete Method에 대한 정보 없이도 Template Method 만을 사용해 기능을 사용할 수 있음을 의미한다. 
-1. `Template Method`는 다양한 패턴들의 근간이 된다. 의존성을 역전하는 것은 여러 디자인 패턴의 핵심이다. 서브클래스들의 Implementation에 대한 정보 없이도 Template Method의 틀을 사용해 알고리즘을 구성할 수 있다.
+1. **`Template Method`는 다양한 패턴들의 근간이 된다.** 의존성을 역전하는 것은 여러 디자인 패턴의 핵심이다. 서브클래스들의 Implementation에 대한 정보 없이도 Template Method의 틀을 사용해 알고리즘을 구성할 수 있다.
 
 ## 연관된 패턴
 - [Factory Method](https://github.com/YaJaJoA/DesignPatternStudy/blob/main/FactoryMethod/leejunseo/README.md)
